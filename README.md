@@ -7,7 +7,7 @@ Is a repo hosting header-only C utility libraries
 Get all libraries locally
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/main/installer.sh)
+bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/refs/heads/main/scripts/installer.sh)
 ```
 ## License
 
