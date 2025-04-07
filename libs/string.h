@@ -1,5 +1,5 @@
-#ifndef STRING_H
-#define STRING_H
+#ifndef IO_STRING_H
+#define IO_STRING_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,7 +58,7 @@ STRINGAPI string_array_t string_split(string_t str, char delimiter, string_arena
 #define CharAt string_char_at
 #define Split(src, delim) string_split(src, delim, &global_arena)
 
-#endif // STRING_H
+#endif // IO_STRING_H
 
 
 #ifdef STRING_IMPLEMENTATION

@@ -1,5 +1,5 @@
-#ifndef CLI_H
-#define CLI_H
+#ifndef IO_CLI_H
+#define IO_CLI_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -217,5 +217,5 @@ CLIAPI void cli_generate_format_string(char* buffer, cli_args_t args)
 
 #endif // CLI_IMPLEMENTATION
 
-#endif // CLI_H
+#endif // IO_CLI_H
 

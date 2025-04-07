@@ -1,5 +1,5 @@
-#ifndef LUAMAN_H
-#define LUAMAN_H
+#ifndef IO_LUAMAN_H
+#define IO_LUAMAN_H
 
 #include "lauxlib.h"
 #include "lua.h"
@@ -70,7 +70,7 @@ LMAPI bool LMCallFunction(LuaMan* lm, int args, int returns);
 #define LMRunString(lm, string) (luaL_dostring((lm)->state, string) == LUA_OK)
 #define LMRunFile(lm, path) (luaL_dofile((lm)->state, path) == LUA_OK)
 
-#endif // LUAMAN_H
+#endif // IO_LUAMAN_H
 
 #ifdef LUAMAN_IMPLEMENTATION
 

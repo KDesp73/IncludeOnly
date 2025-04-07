@@ -1,5 +1,5 @@
-#ifndef ANSI_H
-#define ANSI_H
+#ifndef IO_ANSI_H
+#define IO_ANSI_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -106,5 +106,5 @@ ANSIAPI void ansi_print_color_table()
 
 #endif // ANSI_IMPLEMENTATION
 
-#endif // ANSI_H
+#endif // IO_ANSI_H
 

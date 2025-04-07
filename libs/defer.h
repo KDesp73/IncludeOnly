@@ -1,5 +1,5 @@
-#ifndef DEFER_H
-#define DEFER_H
+#ifndef IO_DEFER_H
+#define IO_DEFER_H
 
 #define __DEFER__(func, var)\
     auto void func(int*); \
@@ -11,4 +11,4 @@
 #define defer DEFER_CALLER(__COUNTER__)
     
 
-#endif // DEFER_H
+#endif // IO_DEFER_H

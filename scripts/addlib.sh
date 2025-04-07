@@ -29,3 +29,5 @@ echo "}" >> "$EXAMPLE"
 echo "# $NAME.h" >> "$DOC"
 
 echo "https://raw.githubusercontent.com/KDesp73/IncludeOnly/refs/heads/main/libs/$NAME.h" >> libs.list
+
+echo "| [$NAME.h](https://github.com/KDesp73/IncludeOnly/blob/main/libs/$NAME.h)         | --      |" >> README.md

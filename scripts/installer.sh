@@ -28,4 +28,4 @@ install_headers() {
     rm "$LOCAL_FILE"
 }
 
-install_headers()
+install_headers

@@ -9,6 +9,9 @@ Get all libraries locally
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/main/installer.sh)
 ```
+## License
+
+[MIT](./LICENSE)
 
 ## Current collection
  
@@ -23,7 +26,3 @@ bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/main/instal
 | [luaman.h](https://github.com/IncludeOnly/luaman.h)   | 0.1.0   |
 | [bench.h](https://github.com/IncludeOnly/bench.h)     | 0.0.1   |
 | [ini.h](https://github.com/IncludeOnly/ini.h)         | --      |
-
-## License
-
-[MIT](./LICENSE)

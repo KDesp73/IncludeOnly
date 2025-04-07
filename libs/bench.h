@@ -1,5 +1,5 @@
-#ifndef BENCH_H
-#define BENCH_H
+#ifndef IO_BENCH_H
+#define IO_BENCH_H
 #include <stdio.h>
 #include <time.h>
 
@@ -70,4 +70,4 @@ BENCHAPI inline void bench_log(bench_t* bench, const char* tag)
 }
 #define BENCH_LOG(tag) bench_log(&bench, tag)
 
-#endif // BENCH_H
+#endif // IO_BENCH_H

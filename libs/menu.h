@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef IO_MENU_H
+#define IO_MENU_H
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -441,5 +441,5 @@ MENUAPI int menu(const char* title, int color, MenuPrintOptionFunc print_option,
 
 #endif // MENU_IMPLEMENTATION
 
-#endif // MENU_H
+#endif // IO_MENU_H
 

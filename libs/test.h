@@ -6,8 +6,8 @@
  * Written by KDesp73
  */
 
-#ifndef TEST_H
-#define TEST_H
+#ifndef IO_TEST_H
+#define IO_TEST_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -161,4 +161,4 @@ TESTAPI int test(int first, ...)
 }
 #endif // TEST_IMPLEMENTATION
 
-#endif // TEST_H
+#endif // IO_TEST_H
