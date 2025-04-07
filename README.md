@@ -1,13 +1,13 @@
 # IncludeOnly
 
-Is an organization hosting header-only C utility libraries that make your experience writting C a little better
+Is a repo hosting header-only C utility libraries
 
 ## Fetch
 
 Get all libraries locally
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/IncludeOnly/installer.sh/main/installer.sh)
+bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/main/installer.sh)
 ```
 
 ## Current collection
@@ -24,7 +24,6 @@ bash <(curl -s https://raw.githubusercontent.com/IncludeOnly/installer.sh/main/i
 | [bench.h](https://github.com/IncludeOnly/bench.h)     | 0.0.1   |
 | [ini.h](https://github.com/IncludeOnly/ini.h)         | --      |
 
-## My Profile
+## License
 
-[KDesp73](https://github.com/KDesp73)
-
+[MIT](./LICENSE)
