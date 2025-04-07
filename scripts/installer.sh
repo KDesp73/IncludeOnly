@@ -2,8 +2,8 @@
 
 # IncludeOnly installer
 
-LIBRARIES_FILE="https://raw.githubusercontent.com/KDeps73/IncludeOnly/refs/heads/main/libs.list"
-LOCAL_FILE="libs.list"
+LIBRARIES_FILE="https://raw.githubusercontent.com/KDesp73/IncludeOnly/refs/heads/main/libs.list"
+LOCAL_FILE="/tmp/libs.list"
 TARGET_DIR="/usr/local/include/io/"
 
 install_headers() {
