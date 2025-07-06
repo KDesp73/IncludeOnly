@@ -1,19 +1,19 @@
 /**
- * test.h v0.0.2
+ * test.h v0.0.4
  *
  * A tiny data-driven testing framework
  *
  * Written by KDesp73
  */
 
-#ifndef IO_TEST_H
-#define IO_TEST_H
+#ifndef TEST_H
+#define TEST_H
 
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
 
-#define TEST_VERSION "0.0.2"
+#define TEST_VERSION "0.0.4"
 
 #ifndef TESTAPI
     #define TESTAPI static
@@ -48,6 +48,57 @@ TESTAPI void load_test(const char* name);
 #define RUN_TEST(test) \
     TEST_##test
 
+#ifndef CLIAPI
+    #error "io/cli.h library is necessary"
+#endif // CLIAPI
+#define TEST_ARGS(argc, argv)                                                                 \
+    do {                                                                                      \
+        cli_args_t args = cli_args_make(                                                      \
+                cli_arg_new('h', "help", "Prints this message", no_argument),                 \
+                cli_arg_new('l', "load", "Load the tests", no_argument),                      \
+                cli_arg_new('1', "batch-1", "Run only batch #1", no_argument),                \
+                cli_arg_new('2', "batch-2", "Run only batch #2", no_argument),                \
+                cli_arg_new('3', "batch-3", "Run only batch #3", no_argument),                \
+                cli_arg_new('4', "batch-4", "Run only batch #4", no_argument),                \
+                NULL                                                                          \
+            );                                                                                \
+        int opt, rc = 0;                                                                      \
+        LOOP_ARGS(opt, args){                                                                 \
+            switch (opt) {                                                                    \
+                case 'h':                                                                     \
+                    cli_help(args, "check [OPTION]", "Written by KDesp73 - Part of test.h");  \
+                    break;                                                                    \
+                case 'l':                                                                     \
+                    load();                                                                   \
+                    break;                                                                    \
+                case '1':                                                                     \
+                    rc = _1();                                                                \
+                    break;                                                                    \
+                case '2':                                                                     \
+                    rc = _2();                                                                \
+                    break;                                                                    \
+                case '3':                                                                     \
+                    rc = _3();                                                                \
+                    break;                                                                    \
+                case '4':                                                                     \
+                    rc = _4();                                                                \
+                    break;                                                                    \
+                default:                                                                      \
+                    rc = 1;                                                                   \
+                    break;                                                                    \
+            }                                                                                 \
+        }                                                                                     \
+        cli_args_free(&args);                                                                 \
+        if(argc > 1){ exit(rc); }                                                             \
+    } while(0)
+
+extern char* TEST_DIRECTORY;
+extern void load(void);
+extern int _1(void);
+extern int _2(void);
+extern int _3(void);
+extern int _4(void);
+
 #ifdef TEST_IMPLEMENTATION
 #define STRAPPEND(buffer, fmt, ...) \
     snprintf(buffer + strlen(buffer), sizeof(buffer), fmt "\n", ##__VA_ARGS__)
@@ -55,7 +106,7 @@ TESTAPI void load_test(const char* name);
 TESTAPI void load_test(const char* name)
 {
     char input_path[128];
-    snprintf(input_path, sizeof(input_path), "test/%s.ctd", name);
+    snprintf(input_path, sizeof(input_path), "%s/%s.ctd", TEST_DIRECTORY, name);
     FILE* input_file = fopen(input_path, "r");
     if (input_file == NULL) {
         FILE* write = fopen(input_path, "w");
@@ -69,7 +120,7 @@ TESTAPI void load_test(const char* name)
     }
 
     char output_path[128];
-    snprintf(output_path, sizeof(output_path), "test/%s.h", name);
+    snprintf(output_path, sizeof(output_path), "%s/%s.h", TEST_DIRECTORY, name);
 
     FILE* output_file = fopen(output_path, "w");
     if (output_file == NULL) {
@@ -161,4 +212,4 @@ TESTAPI int test(int first, ...)
 }
 #endif // TEST_IMPLEMENTATION
 
-#endif // IO_TEST_H
+#endif // TEST_H

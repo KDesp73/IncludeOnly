@@ -11,8 +11,8 @@
 
 #define CLI_VERSION_MAJOR 0
 #define CLI_VERSION_MINOR 0
-#define CLI_VERSION_PATCH 1
-#define CLI_VERSION "0.0.1"
+#define CLI_VERSION_PATCH 2
+#define CLI_VERSION "0.0.2"
 
 #ifndef CLIAPI
     #define CLIAPI static
@@ -145,11 +145,21 @@ CLIAPI void cli_args_to_options(struct option options[], cli_args_t args)
 
 CLIAPI void cli_help(cli_args_t args, const char* usage, const char* footer)
 {
+#ifndef ANSI_RED
     const char* ANSI_RED = "\e[31m";
+#endif
+#ifndef ANSI_GREEN
     const char* ANSI_GREEN = "\e[32m";
+#endif
+#ifndef ANSI_YELLOW
     const char* ANSI_YELLOW = "\e[33m";
+#endif
+#ifndef ANSI_RESET
     const char* ANSI_RESET = "\e[0;39m";
+#endif
+#ifndef ANSI_BOLD
     const char* ANSI_BOLD = "\e[1m";
+#endif
 
     int max_length = 0;
 
