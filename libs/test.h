@@ -48,9 +48,6 @@ TESTAPI void load_test(const char* name);
 #define RUN_TEST(test) \
     TEST_##test
 
-#ifndef CLIAPI
-    #error "io/cli.h library is necessary"
-#endif // CLIAPI
 #define TEST_ARGS(argc, argv)                                                                 \
     do {                                                                                      \
         cli_args_t args = cli_args_make(                                                      \
